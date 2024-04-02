@@ -33,38 +33,35 @@ namespace Digger
         {
             switch (Game.KeyPressed)
                 {
-                case Key.Up:
-                    if (y - 1 >= 0)
-                    {
-                        return new CreatureCommand() { DeltaY = -1};
-                    }
-                    break;
-                case Key.Down:
-                    if (y + 1 < Game.MapHeight)
-                    {
-                        return new CreatureCommand() { DeltaY = 1 };
-                    }
+                    case Key.Up:
+                        if (y - 1 >= 0)
+                        {
+                            return new CreatureCommand() { DeltaY = -1};
+                        }
                         break;
-                case Key.Left:
-                    if (x - 1 >= 0)
-                    {
-                        return new CreatureCommand() { DeltaX = -1 };
-                    }
-                    break;
-                case Key.Right:
-                    if (x + 1 < Game.MapWidth)
-                    {
-                        return new CreatureCommand() { DeltaX = 1 };
-                    }
-                    break;
-                default:
+                    case Key.Down:
+                        if (y + 1 < Game.MapHeight)
+                        {
+                            return new CreatureCommand() { DeltaY = 1 };
+                        }
+                        break;
+                    case Key.Left:
+                        if (x - 1 >= 0)
+                        {
+                            return new CreatureCommand() { DeltaX = -1 };
+                        }
+                        break;
+                    case Key.Right:
+                        if (x + 1 < Game.MapWidth)
+                        {
+                            return new CreatureCommand() { DeltaX = 1 };
+                        }
+                        break;
+                    default:
                     return new CreatureCommand() { DeltaX = 0, DeltaY = 0 };
                 }
             
             return new CreatureCommand() { DeltaX = 0, DeltaY = 0 };
-
-            //x + command.DeltaX < 0 || x + command.DeltaX >= Game.MapWidth || y + command.DeltaY < 0 ||
-            //    y + command.DeltaY >= Game.MapHeight
         }
 
         public bool DeadInConflict(ICreature conflictedObject)
@@ -83,6 +80,3 @@ namespace Digger
         }
     }
 }
-
-
-//Напишите здесь классы Player, Terrain и другие.
