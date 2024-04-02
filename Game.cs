@@ -43,6 +43,6 @@ S TTST  TG
 
 	public static void CreateMap()
 	{
-		Map = CreatureMapCreator.CreateMap(mapWithPlayerTerrainSackGoldMonster);
+		Map = CreatureMapCreator.CreateMap(mapWithPlayerTerrain);
 	}
 }
